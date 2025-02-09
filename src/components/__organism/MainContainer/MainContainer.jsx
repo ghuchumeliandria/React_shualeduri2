@@ -1,9 +1,14 @@
 import React from "react";
+import Comment from "../../__molecules/Comment/Comment";
+import AddComment from "../../__molecules/AddComment/AddComment";
 
 function MainContainer(){
     return(
         <>
-        <div className="flex flex-col   max-w-[730px] mx-auto bg-white  h-[100vh]"></div>
+        <div className="flex flex-col gap-[20px]   max-w-[730px] mx-auto  h-[100vh]">
+            <Comment />
+            <AddComment />
+        </div>
         </>
     )
 }

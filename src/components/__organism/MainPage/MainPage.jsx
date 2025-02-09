@@ -3,7 +3,7 @@ import MainContainer from "../MainContainer/MainContainer";
 function MainPage(){
     return(
         <>
-        <div className="w-[100%]  bg-[#F5F6FA] min-h-[100vh] py-[64px]">
+        <div className="w-[100%]  bg-[#F5F6FA] min-h-[100vh] py-[64px] px-[16px]">
             <MainContainer />
         </div>
         </>
