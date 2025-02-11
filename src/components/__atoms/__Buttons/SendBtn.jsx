@@ -1,5 +1,5 @@
 // import { comment } from "postcss";
-import React, { useEffect, useState,  } from "react";
+import React, {  useState,  } from "react";
 
 function SendBtn(props) {
   const [isTrue, setIsTrue] = useState(true);

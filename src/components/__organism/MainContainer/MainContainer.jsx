@@ -5,7 +5,7 @@ import AddComment from "../../__molecules/AddComment/AddComment";
 
 function MainContainer() {
   const [commentBody, setCommentBody] = useState("");
-  const [commentTrue, isCommentTrue] = useState(false);
+  const [commentTrue, isCommentTrue] = useState(true);
   const [commentsArr, setCommentsArr] = useState([]);
 
   // {
@@ -21,7 +21,7 @@ function MainContainer() {
 
   return (
     <>
-      <div className="flex flex-col gap-[20px]   max-w-[730px] mx-auto  h-[100vh]">
+      <div className="flex flex-col gap-[20px]   max-w-[730px] mx-auto ">
         <Comment
           commentsArr={commentsArr}
           commentTrue={commentTrue}
