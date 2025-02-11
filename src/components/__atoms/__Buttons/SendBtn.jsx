@@ -1,23 +1,29 @@
 // import { comment } from "postcss";
-import React, { useState,  } from "react";
+import React, { useEffect, useState,  } from "react";
 
 function SendBtn(props) {
   const [isTrue, setIsTrue] = useState(true);
+  
   function SendComment(e) {
     e.preventDefault();
 
-    if (props.commentBody.length == 0) {
-      setIsTrue(false);
-      console.log("carielia");
-    } else {
-      setIsTrue(true);
-      props.commentsArr.push(props.CommmentObject)
-      localStorage.setItem("item", JSON.stringify(props.commentsArr));
-      props.isCommentTrue(true);
+      if (props.commentBody.length == 0) {
+        setIsTrue(false);
+        console.log("carielia");
+      } else {
+        setIsTrue(true);
+
+        const pushItem = [...props.commentsArr, props.CommmentObject]
+        props.setCommentsArr(pushItem)
+        
+        localStorage.setItem("item", JSON.stringify(pushItem));
+        props.isCommentTrue(true);
+
+      }
+      
+      props.setCommentBody("");
     }
 
-    props.setCommentBody("");
-  }
 
   return (
     <>

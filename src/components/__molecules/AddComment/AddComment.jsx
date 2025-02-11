@@ -1,11 +1,14 @@
 import React, { useEffect } from "react";
 import img from "../../../assets/images/p-picture.png";
 import SendBtn from "../../__atoms/__Buttons/SendBtn";
+
+
 function AddComment(props) {
   const CommmentObject = {
     comment: props.commentBody,
     picture: img,
     name: "Andria",
+    time : Date.now() 
   };
   return (
     <>
@@ -29,6 +32,7 @@ function AddComment(props) {
             commentsArr={props.commentsArr}
           />
         </div>
+        
       </form>
     </>
   );

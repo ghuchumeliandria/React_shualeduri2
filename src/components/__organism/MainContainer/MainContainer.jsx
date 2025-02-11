@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Comment from "../../__molecules/Comment/Comment";
 import AddComment from "../../__molecules/AddComment/AddComment";
 // import img from "../../../assets/images/p-picture.png";
@@ -6,18 +6,27 @@ import AddComment from "../../__molecules/AddComment/AddComment";
 function MainContainer() {
   const [commentBody, setCommentBody] = useState("");
   const [commentTrue, isCommentTrue] = useState(false);
-  const [commentsArr, setCommentsArr] = useState('');
+  const [commentsArr, setCommentsArr] = useState([]);
 
-  const CommentsArr = []
-  useEffect(() =>{
-      const GetItemFromComment = JSON.parse(localStorage.getItem("item")) || [];
-      setCommentsArr(GetItemFromComment)
-  },[])
+  // {
+  //   comment:
+  //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum nostrum sequi quam magnam incidunt? Illum eum nesciunt libero eveniet natus cupiditate, qui aliquam magni doloremque accusamus voluptatum numquam, maxime deserunt",
+  //   picture: img,
+  //   name: "Niki Sukiasyan",
+  // },
+  useEffect(() => {
+    const GetItemFromComment = JSON.parse(localStorage.getItem("item")) || [];
+    setCommentsArr(GetItemFromComment);
+  }, []);
 
   return (
     <>
       <div className="flex flex-col gap-[20px]   max-w-[730px] mx-auto  h-[100vh]">
-        <Comment CommentsArr={commentsArr} commentTrue={commentTrue} />
+        <Comment
+          commentsArr={commentsArr}
+          commentTrue={commentTrue}
+          setCommentsArr={setCommentsArr}
+        />
         <AddComment
           isCommentTrue={isCommentTrue}
           commentBody={commentBody}
