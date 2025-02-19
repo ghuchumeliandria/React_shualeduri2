@@ -1,4 +1,4 @@
-// import { comment } from "postcss";
+
 import React, {  useState,  } from "react";
 
 function SendBtn(props) {
@@ -12,12 +12,11 @@ function SendBtn(props) {
         console.log("carielia");
       } else {
         setIsTrue(true);
-
+        
         const pushItem = [...props.commentsArr, props.CommmentObject]
         props.setCommentsArr(pushItem)
         
         localStorage.setItem("item", JSON.stringify(pushItem));
-        props.isCommentTrue(true);
 
       }
       

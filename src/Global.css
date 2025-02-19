@@ -1,4 +1,17 @@
-*{
-    box-sizing: border-box;
-    transition: 0.7s;
+* {
+  box-sizing: border-box;
+  transition: 0.7s;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b5a7a78d;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #20b7ee;
 }
